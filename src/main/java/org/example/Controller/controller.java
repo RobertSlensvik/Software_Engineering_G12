@@ -3,6 +3,10 @@ import java.util.*;
 
 public class controller {
 
+    boolean isStore;
+    boolean isUser;
+    boolean isAdmin;
+
         // LOGIN SCREENS
         public void loginPanel() {
             int choice;
@@ -20,16 +24,30 @@ public class controller {
     
             switch (choice) {
                 case 1:
-                    adminPanel();      // Go to admin-screen
+                    loginAdmin();      // Go to admin-screen
                 case 2:
-                    loginUserPanel();  // Go to user-login screen
+                    loginUser();  // Go to user-login screen
                 case 3:
-                    loginStorePanel(); // Go to store-screen
+                    loginStore(); // Go to store-screen
                 case 4:
-                    makeUser();        // Make a new user
+                    newUser();        // Make a new user
                 case 5:
                     break;             // Leave
             }
         }
     
+        public void loginAdmin(){
+            isStore = false;
+            isUser = false;
+            isAdmin = true;
+        }
+        public void loginUser(){
+
+        }
+        public void loginStore(){
+
+        }
+        public void newUser(){
+            
+        }
 }
