@@ -55,7 +55,7 @@ public class controller {
 
         switch (choice){
             case 1:
-            //seeCars();
+                //seeCars();
             case 2:
                 //updateCars();
             case 3:
@@ -67,11 +67,10 @@ public class controller {
             case 6:
                 loginSystem();
         }
-        }
+    }
         public void loginUser(){
-            isStore = false;
-            isAdmin = false;
-            isUser = true;
+            System.out.println("\nWich User you want to log in:");
+            //ArrayList<String> userNameArray = userRepo.
 
         }
         public void loginStore(){
