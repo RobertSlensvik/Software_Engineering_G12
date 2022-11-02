@@ -8,7 +8,7 @@ public class controller {
     boolean isAdmin;
 
         // LOGIN SCREENS
-        public void loginPanel() {
+        public void loginSystem() {
             int choice;
             Scanner inputScanner = new Scanner(System.in);
     
@@ -36,15 +36,48 @@ public class controller {
             }
         }
     
-        public void loginAdmin(){
-            isStore = false;
-            isUser = false;
-            isAdmin = true;
+    public void loginAdmin(){
+        isStore = false;
+        isUser = false;
+        isAdmin = true;
+
+        int choice;
+        Scanner inputScanner = new Scanner(System.in);
+        System.out.println("\n\n================== LOGIN ===============" +
+            "\n1. See cars" +
+            "\n2. Update cars" +
+            "\n3. Purchase History" +
+            "\n4. See all car rental" +
+            "\n5. See all Users" +
+            "\n6. Log out"+
+            "\n========================================");
+        choice = inputScanner.nextInt();
+
+        switch (choice){
+            case 1:
+            //seeCars();
+            case 2:
+                //updateCars();
+            case 3:
+                //purchaseHistory();
+            case 4:
+                //carRentals();
+            case 5:
+                //seeUser();
+            case 6:
+                loginSystem();
+        }
         }
         public void loginUser(){
+            isStore = false;
+            isAdmin = false;
+            isUser = true;
 
         }
         public void loginStore(){
+            isAdmin = false;
+            isUser = false;
+            isStore = true;
 
         }
         public void newUser(){
