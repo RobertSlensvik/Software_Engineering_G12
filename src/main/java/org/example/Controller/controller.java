@@ -1,6 +1,8 @@
 package org.example.Controller;
 import java.util.*;
 
+import org.example.Repository.UserRepository;
+
 public class controller {
 
     boolean isStore;
@@ -70,7 +72,16 @@ public class controller {
     }
         public void loginUser(){
             System.out.println("\nWich User you want to log in:");
-            //ArrayList<String> userNameArray = userRepo.
+            ArrayList<String> userNameArray = UserRepository.showUserName();
+
+            if (userNameArray.isEmpty()){
+                System.out.println("No users available");
+            }
+            else{
+                for(String userName : userNameArray){
+                    System.out.println(userName);
+                }
+            }
 
         }
         public void loginStore(){

@@ -7,8 +7,11 @@ import java.util.HashMap;
 
 public interface UserRepository {
     User getUser(String userKey);
-    HashMap<String, User> showUsers();
-    ArrayList<String> showUserNames();
+    HashMap<String, User> showUser();
+    static ArrayList<String> showUserName() {
+        // TODO Auto-generated method stub
+        return null;
+    }
     void addUser(User newUser);
     void removeUser(User user);
     void depositMoney(User user, double money);
