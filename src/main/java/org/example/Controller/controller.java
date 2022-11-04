@@ -1,6 +1,7 @@
 package org.example.Controller;
 import java.util.*;
 
+import org.example.Model.User;
 import org.example.Repository.UserRepository;
 
 public class controller {
@@ -17,7 +18,7 @@ public class controller {
             System.out.println("\n\n================== LOGIN ===============" +
                     "\n1. Log in as admin" +
                     "\n2. Log in as user" +
-                    "\n3. Log in as store" +
+                    "\n3. Log in as car rental" +
                     "\n4. Make new user" +
                     "\n5. Leave" +
                     "\n========================================");
@@ -28,9 +29,9 @@ public class controller {
                 case 1:
                     loginAdmin();      // Go to admin-screen
                 case 2:
-                    loginUser();  // Go to user-login screen
+                    loginUser();  // Go to user-login
                 case 3:
-                    loginStore(); // Go to store-screen
+                    loginCarRental(); // Go to rental screen
                 case 4:
                     newUser();        // Make a new user
                 case 5:
@@ -82,9 +83,37 @@ public class controller {
                     System.out.println(userName);
                 }
             }
+            String userInput;
+            Scanner inputScanner = new Scanner(System.in);
+            userInput = inputScanner.nextLine();
 
+//            if (UserRepository.userExists(userInput)){
+//              userP
+            }
+
+        //}
+        public void user(User user){
+            currentUser = user;
+
+            isAdmin = false;
+            isStore = false;
+            isUser = true;
+
+            int choice;
+            Scanner inpScanner = new Scanner(System.in);
+            System.out.println("\n ============User==============" +
+            "\n1. See Cars"+
+            "\n2. Rent a car"+
+            "\n3. Show rented cars"+
+            "\n4. See balance"+
+            "\n5. Add balance"+
+            "\n6. Log out"+
+            "\n======================================");
+        choice = inputScanner.nextInt();
+        
         }
-        public void loginStore(){
+
+        public void loginCarRental(){
             isAdmin = false;
             isUser = false;
             isStore = true;
