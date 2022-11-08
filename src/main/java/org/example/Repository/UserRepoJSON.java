@@ -27,7 +27,7 @@ public class UserRepoJSON implements UserRepository{
     }
 
     public void wirteJSON(String filename){
-        ArreyList<User> userArray = new ArrayList<>(userMap.values());
+        ArrayList<User> userArray = new ArrayList<>(userMap.values());
     }
 
     @Override
@@ -43,7 +43,7 @@ public class UserRepoJSON implements UserRepository{
 
     @Override
     public ArrayList<String> showUserName() {
-        ArrayList userNamesList = new ArrayList<>();
+        ArrayList userNamesArray = new ArrayList<>();
 
         for (Map.Entry<String, User> userSet : userMap.entrySet()){
             userNamesArray.add(userSet.getValue().getName());

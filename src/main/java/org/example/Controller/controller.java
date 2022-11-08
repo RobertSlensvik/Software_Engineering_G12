@@ -31,7 +31,7 @@ public class Controller {
                     "\n2. Log in as user" +
                     "\n3. Log in as car rental" +
                     "\n4. Make new user" +
-                    "\n5. Leave" +
+                    "\n5. Exit app" +
                     "\n========================================");
     
             choice = inputScanner.nextInt();
@@ -46,7 +46,7 @@ public class Controller {
                 case 4:
                     newUser();        // Make a new user
                 case 5:
-                    break;             // Leave
+                    System.exit(choice);            // Exit app
             }
         }
     
