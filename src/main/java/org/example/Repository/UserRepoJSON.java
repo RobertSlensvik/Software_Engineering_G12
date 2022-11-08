@@ -53,7 +53,7 @@ public class UserRepoJSON implements UserRepository{
 
     @Override
     public void addUser(User newUser) {
-        // TODO Auto-generated method stub
+        userMap.put(newUser.getName(), newUser);
         
     }
 
