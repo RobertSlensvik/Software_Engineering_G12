@@ -4,13 +4,24 @@ import java.util.*;
 import org.example.Model.User;
 import org.example.Repository.UserRepository;
 
-public class controller {
+public class Controller {
+    //Reposetories
+    private UserRepository userRepository;
 
+    //Variables used to which user that is logged in
+    private User currentUser;
+
+    //Variables to get back to correct log in screen
     boolean isStore;
     boolean isUser;
     boolean isAdmin;
 
-        // LOGIN SCREENS
+    public Controller(UserRepository userRepository){
+        this.userRepository = userRepository;
+    }
+
+
+
         public void loginSystem() {
             int choice;
             Scanner inputScanner = new Scanner(System.in);
@@ -73,7 +84,7 @@ public class controller {
     }
         public void loginUser(){
             System.out.println("\nWich User you want to log in:");
-            ArrayList<String> userNameArray = UserRepository.showUserName();
+            ArrayList<String> userNameArray = userRepository.showUserName();
 
             if (userNameArray.isEmpty()){
                 System.out.println("No users available");
@@ -87,11 +98,16 @@ public class controller {
             Scanner inputScanner = new Scanner(System.in);
             userInput = inputScanner.nextLine();
 
-//            if (UserRepository.userExists(userInput)){
-//              userP
+            if (userRepository.userExists(userInput)){
+              user(userRepository.getUser(userInput));
+            }
+            else{
+                System.out.println("\n That user does not exist");
+
+                loginSystem();
             }
 
-        //}
+        }
         public void user(User user){
             currentUser = user;
 
@@ -100,7 +116,7 @@ public class controller {
             isUser = true;
 
             int choice;
-            Scanner inpScanner = new Scanner(System.in);
+            Scanner inputScanner = new Scanner(System.in);
             System.out.println("\n ============User==============" +
             "\n1. See Cars"+
             "\n2. Rent a car"+
