@@ -3,6 +3,7 @@ import java.util.*;
 
 import org.example.Model.User;
 import org.example.Repository.UserRepository;
+import org.example.Repository.storeRapository;
 
 public class Controller {
     //Reposetories
@@ -131,7 +132,7 @@ public class Controller {
 
         public void loginCarRental(){
             System.out.println("\n Wich user are renting out?");
-            ArrayList<String> storeNamesArray = 
+            ArrayList<String> storeNamesArray = new storeRapository.showStores();
 
             if(storeNamesArray.isEmpty()){
                 System.out.println("\n ");
