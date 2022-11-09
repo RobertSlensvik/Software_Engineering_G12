@@ -31,7 +31,7 @@ public class Controller {
                     "\n2. Log in as user" +
                     "\n3. Log in as car rental" +
                     "\n4. Make new user" +
-                    "\n5. Exit app" +
+                    "\n5. Leave" +
                     "\n========================================");
     
             choice = inputScanner.nextInt();
@@ -46,7 +46,7 @@ public class Controller {
                 case 4:
                     newUser();        // Make a new user
                 case 5:
-                    System.exit(choice);            // Exit app
+                    break;             // Leave
             }
         }
     
@@ -130,12 +130,20 @@ public class Controller {
         }
 
         public void loginCarRental(){
-            isAdmin = false;
-            isUser = false;
-            isStore = true;
+            System.out.println("\n Wich user are renting out?");
+            ArrayList<String> storeNamesArray = 
 
+            if(storeNamesArray.isEmpty()){
+                System.out.println("\n ");
+            }
         }
         public void newUser(){
             
+        }
+
+        public void store(){
+            isAdmin = false;
+            isUser = false;
+            isStore = true;
         }
 }
