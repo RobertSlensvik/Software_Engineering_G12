@@ -133,17 +133,9 @@ public class Controller {
 
         public void loginCarRental(){
             System.out.println("\n Wich user are renting out?");
-            ArrayList<String> storeNamesArray = storeRepository.showStoreNames();
-
-            if(storeNamesArray.isEmpty()){
-                System.out.println("\n no car rental registered");
-            }
-            else{
-                for (String stroreNames : storeNamesArray){
-                    System.out.println(stroreNames);
-                }
-            }
+            ArrayList<String> rentalArray = storeRepository.showRentalUser();
         }
+
         public void newUser(){
             
         }
