@@ -2,6 +2,7 @@ package org.example.Controller;
 import java.util.*;
 
 import org.example.Model.User;
+import org.example.Model.Store;
 import org.example.Repository.UserRepository;
 import org.example.Repository.storeRapository;
 
@@ -132,17 +133,22 @@ public class Controller {
 
         public void loginCarRental(){
             System.out.println("\n Wich user are renting out?");
-            ArrayList<String> storeNamesArray = new storeRapository.showStores();
+            ArrayList<String> storeNamesArray = storeRapository.showStoreNames();
 
             if(storeNamesArray.isEmpty()){
-                System.out.println("\n ");
+                System.out.println("\n no car rental registered");
+            }
+            else{
+                for (String stroreNames : storeNamesArray){
+                    System.out.println(stroreNames);
+                }
             }
         }
         public void newUser(){
             
         }
 
-        public void store(){
+        public void store(Store store){
             isAdmin = false;
             isUser = false;
             isStore = true;
