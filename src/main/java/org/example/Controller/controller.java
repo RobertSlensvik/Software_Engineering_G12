@@ -4,7 +4,7 @@ import java.util.*;
 import org.example.Model.User;
 import org.example.Model.Store;
 import org.example.Repository.UserRepository;
-import org.example.Repository.storeRapository;
+import org.example.Repository.StoreRepository;
 
 public class Controller {
     //Reposetories
@@ -133,7 +133,7 @@ public class Controller {
 
         public void loginCarRental(){
             System.out.println("\n Wich user are renting out?");
-            ArrayList<String> storeNamesArray = storeRapository.showStoreNames();
+            ArrayList<String> storeNamesArray = storeRepository.showStoreNames();
 
             if(storeNamesArray.isEmpty()){
                 System.out.println("\n no car rental registered");
