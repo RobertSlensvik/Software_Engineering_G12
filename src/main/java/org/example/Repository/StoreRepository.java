@@ -4,8 +4,8 @@ import org.example.Model.Store;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class storeRapository {
+public interface StoreRepository {
     Store getStore(String storeKey);
-    HashMap<String, Store> showStores();
-    ArrayList<String> showStoreNames();
+    HashMap<String, Store> showRental();
+    ArrayList<String> showRentalUser();
 }
