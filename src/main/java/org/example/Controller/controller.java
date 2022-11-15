@@ -3,6 +3,7 @@ import java.util.*;
 
 import org.example.Model.User;
 import org.example.Model.Store;
+import org.example.Repository.StoreRepository;
 import org.example.Repository.UserRepository;
 
 public class Controller {
@@ -136,14 +137,11 @@ public class Controller {
 
         public void loginCarRental(){
             System.out.println("\n Which user are renting out?");
-            ArrayList<String> storeNamesArray = new storeRapository.showRentals();
+            ArrayList<String> rentalNamesArray = storeRepository.showRental();
 
-            if(storeNamesArray.isEmpty()){
-                System.out.println("\n ");
+            if(rentalNamesArray.isEmpty()){
+                System.out.println("\n No one registered.");
             }
-
-            System.out.println("\n Wich user are renting out?");
-            ArrayList<String> rentalArray = storeRepository.showRentalUser();
         }
 
         public void newUser(){

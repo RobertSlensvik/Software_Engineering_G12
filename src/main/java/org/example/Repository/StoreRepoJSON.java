@@ -42,14 +42,17 @@ public class StoreRepoJSON implements StoreRepository{
 
     @Override
     public HashMap<String, Store> showRental() {
-        // TODO Auto-generated method stub
-        return null;
+        return new HashMap<>(storeMap);
     }
 
     @Override
     public ArrayList<String> showRentalUser() {
-        // TODO Auto-generated method stub
-        return null;
+        ArrayList<String> storeNameArray = new ArrayList<>();
+
+        for (Map.Entry<String, Store> storeSet : storeMap.entrySet()){
+            storeNameArray.add(storeSet.getValue().getName());
+        }
+        return storeNameArray;
     }
     
 }
