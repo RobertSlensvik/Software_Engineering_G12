@@ -4,7 +4,6 @@ import java.util.*;
 import org.example.Model.User;
 import org.example.Model.Store;
 import org.example.Repository.UserRepository;
-import org.example.Repository.StoreRepository;
 
 public class Controller {
     //Reposetories
@@ -17,6 +16,10 @@ public class Controller {
     boolean isStore;
     boolean isUser;
     boolean isAdmin;
+
+    // Variables to get cars
+    private ArrayList<String> cars;
+    private ArrayList<String> history;
 
     public Controller(UserRepository userRepository){
         this.userRepository = userRepository;
@@ -132,6 +135,13 @@ public class Controller {
         }
 
         public void loginCarRental(){
+            System.out.println("\n Which user are renting out?");
+            ArrayList<String> storeNamesArray = new storeRapository.showStores();
+
+            if(storeNamesArray.isEmpty()){
+                System.out.println("\n ");
+            }
+
             System.out.println("\n Wich user are renting out?");
             ArrayList<String> rentalArray = storeRepository.showRentalUser();
         }
@@ -145,4 +155,47 @@ public class Controller {
             isUser = false;
             isStore = true;
         }
+        public void seeCars() {
+            cars.add("Volvo");
+            cars.add("BMW");
+            cars.add("Ford");
+            cars.add("Mazda");
+            System.out.println(cars);
+
+
+            System.out.println("\n These are the cars.");
+
+            for (int i = 0; i < cars.size(); i++) {
+                System.out.println(cars.get(i));
+            }
+
+        }
+
+
+
+        public void updateCars(){
+            cars.add("Volvo");
+            cars.add("BMW");
+            cars.add("Ford");
+            cars.add("Mazda");
+            cars.remove(1);
+            System.out.println("\n These are the cars.");
+
+            for (int i = 0; i < cars.size(); i++) {
+                System.out.println(cars.get(i));
+            }
+
+
+        }
+
+        public void purchaseHistory() {
+
+        for (int i = 0; i<history.size(); i++){
+            System.out.println(history.get(i));
+        }
+
+
+        }
+
+
 }
