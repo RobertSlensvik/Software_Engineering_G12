@@ -9,6 +9,7 @@ import org.example.Repository.UserRepository;
 public class Controller {
     //Reposetories
     private UserRepository userRepository;
+    private StoreRepository storeRepository;
 
     //Variables used to which user that is logged in
     private User currentUser;
@@ -137,7 +138,7 @@ public class Controller {
 
         public void loginCarRental(){
             System.out.println("\n Which user are renting out?");
-            ArrayList<String> rentalNamesArray = storeRepository.showRental();
+            ArrayList<String> rentalNamesArray = storeRepository.showRentalUser();
 
             if(rentalNamesArray.isEmpty()){
                 System.out.println("\n No one registered.");
