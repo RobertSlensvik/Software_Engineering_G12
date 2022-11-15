@@ -76,11 +76,11 @@ public class Controller {
 
         switch (choice){
             case 1:
-                //seeCars();
+                seeCars();
             case 2:
-                //updateCars();
+                updateCars();
             case 3:
-                //purchaseHistory();
+                purchaseHistory();
             case 4:
                 //carRentals();
             case 5:
@@ -149,11 +149,12 @@ public class Controller {
             
         }
 
-        public void store(Store store){
+        /*public void store(Store store){
             isAdmin = false;
             isUser = false;
             isStore = true;
-        }
+        }*/
+
         public void seeCars() {
             cars.add("Volvo");
             cars.add("BMW");
