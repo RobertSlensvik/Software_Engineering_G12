@@ -136,7 +136,7 @@ public class Controller {
 
         public void loginCarRental(){
             System.out.println("\n Which user are renting out?");
-            ArrayList<String> storeNamesArray = new storeRapository.showStores();
+            ArrayList<String> storeNamesArray = new storeRapository.showRentals();
 
             if(storeNamesArray.isEmpty()){
                 System.out.println("\n ");
