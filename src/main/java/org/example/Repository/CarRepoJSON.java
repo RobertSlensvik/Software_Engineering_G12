@@ -58,7 +58,23 @@ public class CarRepoJSON {
 
     @override
     public ArrayList<String> showCarName(boolean showAll, String carType){
-        
+        ArrayList<String> carNameArray = new ArrayList<>();
+
+        for (Map.Entry<String, Car> carSet : carMap.entrySet()){
+            if (showAll){
+                carNameArray.add(carSet.getValue().getBrand());
+            } else{
+                if (carSet.getValue().getBrand().equals(carType)){
+                    carNameArray.add(carSet.getValue().getBrand());
+                }
+                    if (carSet.getValue().getSold()){
+                        if(carNameArray.contains(carSet.getValue().getBrand())){
+                            carNameArray.remove(carSet.getValue().getBrand());
+                        }
+                    }
+            }
+        }
+        return carNameArray;
     }
     
 
