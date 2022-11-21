@@ -64,7 +64,7 @@ public class Car {
         this.buyer = buyer;
     }
 
-    @override
+    @Override
     public String toString(){
         return "Car [brand=" + brand + ", model=" + model + ", description=" + description + ", price=" + price + ", rentersName=" + rentersName + ", buyer=" + buyer + "]";
     }

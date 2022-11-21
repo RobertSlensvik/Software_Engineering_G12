@@ -5,7 +5,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CarRepository {
-    Car getCar(String carKey);
+
+    HashMap<String, Car> showAvalibleCars();
+    ArrayList<Car> showCar(String Car);
+
+    /*Car getCar(String carKey);
 
     boolean isEmpty();
 
@@ -18,6 +22,7 @@ public class CarRepository {
     void userReturnCar(User user, Car car);
 
 
-    Hashmap<String, Car> renterPrice(Store store);
+    Hashmap<String, Car> renterPrice(Store store);*/
+
 
 }
