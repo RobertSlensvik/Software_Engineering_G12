@@ -7,6 +7,7 @@ public class Car {
     private double price;
     private String rentersName;
     private String buyer;
+    private String rented;
 
     public Car(){
 
@@ -20,6 +21,7 @@ public class Car {
         this.price = price;
         this.rentersName = rentersName;
         this.buyer = buyer;
+        this.rented = rented;
     }
 
     public String getBrand() {
@@ -62,6 +64,12 @@ public class Car {
     }
     public void setBuyer(String buyer) {
         this.buyer = buyer;
+    }
+    public String getRented() {
+        return rented;
+    }
+    public void setRented(boolean rented) {
+        this.rented = rented;
     }
 
     @Override

@@ -195,7 +195,7 @@ public class Controller {
                 case 1:
                     seeCars();
                 case 2:
-                    //rentCar();
+                    rentCar();
                 case 3:
                     //showActiveRentals();
                 case 4:
@@ -208,19 +208,40 @@ public class Controller {
         }
 
         public void seeCars() {
-            cars.add("Volvo");
-            cars.add("BMW");
-            cars.add("Ford");
-            cars.add("Mazda");
-            System.out.println(cars);
-
-
-            System.out.println("\n These are the cars.");
-
-            for (int i = 0; i < cars.size(); i++) {
-                System.out.println(cars.get(i));
+            if(carRepository.isEmpty()){
+                System.out.println("\n No cars available");
+                goBack();
             }
 
+            int choice;
+            Scanner inputScanner = new Scanner(System.in);
+            System.out.println("\n ============Cars==============" +
+                                "\n1. See all cars"+
+                                "\n3. See rented cars"+
+                                "\n4. Go back"+
+                                "\n======================================");
+            choice = inputScanner.nextInt();
+
+            switch (choice){
+                case 1:
+                    showAllCars();
+                case 2:
+                    showRentedCars();
+                case 3:
+                    goBack();
+            }
+
+        }
+
+        public void showAvalibleCars(){
+            System.out.println("\n All cars available");
+
+            HashMap<String, Car> carHashMap = carRepository.showAvalibleCars();
+
+            for(Map.Entry<String, Car> car : carHashMap.entrySet()){
+                System.out.println(carSet.getKey() + " " + carSet.getValue());
+            }
+            seeCars();
         }
 
 
@@ -259,6 +280,7 @@ public class Controller {
             else{loginAdmin();}
         }
 
+
         public Car rentCar(){
             System.out.println("\n Wich car do you want to rent out?");
             ArrayList<String> carNamesArray = carRepository.showCarName();
@@ -284,5 +306,6 @@ public class Controller {
             }
             return null;
         }
+
 
 }
