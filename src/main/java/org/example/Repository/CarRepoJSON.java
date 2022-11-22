@@ -10,7 +10,7 @@ import java.io.File;
 import java.util.Map;
 
 
-public class CarRepoJSON {
+public class CarRepoJSON implements CarRepository {
     private String filename;
     HashMap<String, Car> carMap = new HashMap<>();
 

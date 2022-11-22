@@ -4,9 +4,9 @@ import org.example.Model.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class CarRepository {
+public interface CarRepository {
     public Car getCar(String carKey);
-    
+
     public boolean isEmpty();  
     public HashMap<String, Car> showAvalibleCars();
     ArrayList<Car> showCar(String Car);
