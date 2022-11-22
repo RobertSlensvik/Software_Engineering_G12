@@ -36,8 +36,7 @@ public class StoreRepoJSON implements StoreRepository{
 
     @Override
     public Store getStore(String storeKey) {
-        // TODO Auto-generated method stub
-        return null;
+        return storeMap.get(storeKey);
     }
 
     @Override

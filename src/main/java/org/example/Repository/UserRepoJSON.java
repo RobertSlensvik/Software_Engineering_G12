@@ -32,8 +32,7 @@ public class UserRepoJSON implements UserRepository{
 
     @Override
     public User getUser(String userKey) {
-        // TODO Auto-generated method stub
-        return null;
+        return userMap.get(userKey);
     }
 
     @Override
