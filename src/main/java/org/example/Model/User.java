@@ -24,4 +24,11 @@ public class User {
     public void setBalance(double bankBalance){
         this.bankBalance = bankBalance;
     }
+
+    public double getMoney() {
+        return 0;
+    }
+
+    public void setMoney(double d) {
+    }
 }

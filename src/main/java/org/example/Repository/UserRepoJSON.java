@@ -59,25 +59,25 @@ public class UserRepoJSON implements UserRepository{
 
     @Override
     public void removeUser(User user) {
-        // TODO Auto-generated method stub
+        userMap.remove(user.getName());
         
     }
 
     @Override
     public void depositMoney(User user, double money) {
-        // TODO Auto-generated method stub
+        user.setMoney(user.getMoney() + money);
+        
         
     }
 
     @Override
     public void withdrawMoney(User user, double money) {
-        // TODO Auto-generated method stub
+        user.setMoney(user.getMoney() - money);
         
     }
 
     @Override
     public boolean userExists(String userName) {
-        // TODO Auto-generated method stub
-        return false;
+        return userMap.containsKey(userName);
     }
 }
