@@ -1,5 +1,7 @@
 package org.example.Model;
 
+import javax.swing.text.StyledEditorKit.BoldAction;
+
 public class Car {
     private String brand;
     private String model;
@@ -7,7 +9,7 @@ public class Car {
     private double price;
     private String rentersName;
     private String buyer;
-    private String rented;
+    private boolean rented;
 
     public Car(){
 
@@ -65,7 +67,7 @@ public class Car {
     public void setBuyer(String buyer) {
         this.buyer = buyer;
     }
-    public String getRented() {
+    public Boolean getRented() {
         return rented;
     }
     public void setRented(boolean rented) {

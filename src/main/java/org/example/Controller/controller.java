@@ -224,25 +224,37 @@ public class Controller {
 
             switch (choice){
                 case 1:
-                    showAllCars();
+                    showCar();
                 case 2:
-                    showRentedCars();
+                    showAvalibleCars();
                 case 3:
                     goBack();
             }
 
         }
 
-        public void showAvalibleCars(){
-            System.out.println("\n All cars available");
+        public void showCar(){ 
+            System.out.println("\n All the cars");
 
             HashMap<String, Car> carHashMap = carRepository.showAvalibleCars();
 
             for(Map.Entry<String, Car> car : carHashMap.entrySet()){
-                System.out.println(carSet.getKey() + " " + carSet.getValue());
+                System.out.println(car.getKey() + " " + car.getValue());
+        }
+            seeCars();
+     }
+
+        public void showAvalibleCars(){
+            System.out.println("\n All the avalible cars");
+
+            HashMap<String, Car> carHashMap = carRepository.showAvalibleCars();
+
+            for(Map.Entry<String, Car> car : carHashMap.entrySet()){
+                System.out.println(car.getKey() + " " + car.getValue());
             }
             seeCars();
         }
+
 
 
 
