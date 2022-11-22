@@ -66,7 +66,7 @@ public class CarRepoJSON {
                 if (carSet.getValue().getBrand().equals(carType)){
                     carNameArray.add(carSet.getValue().getBrand());
                 }
-                    if (carSet.getValue().getSold()){
+                    if (carSet.getValue().getBrand() != null){
                         if(carNameArray.contains(carSet.getValue().getBrand())){
                             carNameArray.remove(carSet.getValue().getBrand());
                         }
@@ -88,11 +88,12 @@ public class CarRepoJSON {
         return rentHistory;
     }
 
-    @Override boolean isEmpty(){
-        ArrayLitst<String> carNameArray = new ArrayList<>();
+    @Override 
+    boolean isEmpty(){
+        ArrayList<String> carNameArray = new ArrayList<>();
 
         for (Map.Entry<String, Car> carSet : carMap.entrySet()){
-            if (carSet.getValue().getSold()){
+            if (carSet.getValue().getBrand() != null){
                 carNameArray.add(carSet.getValue().getBrand());
             }
         }
@@ -123,7 +124,7 @@ public class CarRepoJSON {
         wirteJSON(filename);
     }
 
-    @override
+    @Override
     public void updateCar(String carKey, Car car){
         carMap.replace(carKey, car);
         carMap.remove(carKey);
