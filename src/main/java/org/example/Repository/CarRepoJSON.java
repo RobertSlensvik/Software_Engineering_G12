@@ -1,8 +1,6 @@
 package org.example.Repository;
 
 import org.example.Model.Car;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.io.File;
@@ -12,7 +10,6 @@ import java.util.Map;
 public class CarRepoJSON implements CarRepository {
     private String filename;
     HashMap<String, Car> carMap = new HashMap<>();
-    ObjectMapper objectMapper = new ObjectMapper();
 
     public CarRepoJSON(String filename){
         this.filename = filename;
@@ -23,23 +20,12 @@ public class CarRepoJSON implements CarRepository {
 
     public void readJSON(String filename){
         Car[] carArray = new Car[0];
+        HashMap<String, Car> returnMap = new HashMap<>();
         File file = new File(filename);
-
-        try {
-            carArray = objectMapper.readValue(file, Car[].class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public void wirteJSON(String filename){
         ArrayList<Car> carArray = new ArrayList<>(carMap.values());
-
-        try {
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(filename), carArray);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
@@ -53,6 +39,8 @@ public class CarRepoJSON implements CarRepository {
         }
         return Cars;
     }
+
+
 
     @Override
     public ArrayList<Car> showCar(String Car) {
@@ -145,6 +133,19 @@ public class CarRepoJSON implements CarRepository {
 
 
     @Override
+    public void updateCar(String car, String brand, String model, String year, String price, String color, String fuel,
+            String seats, String doors, String transmission, String description) {
+        for (Map.Entry<String, Car> carSet : carMap.entrySet()){
+            if (carSet.getValue().getBrand().equals(car)){
+                carSet.getValue().setBrand(brand);
+                carSet.getValue().setModel(model);
+                carSet.getValue().setDescription(description);
+            }
+        }
+        
+    }
+
+    @Override
     public void userRentCar(String car, String renter) {
         for (Map.Entry<String, Car> carSet : carMap.entrySet()){
             if (carSet.getValue().getBrand().equals(car)){
@@ -190,18 +191,61 @@ public class CarRepoJSON implements CarRepository {
         return carNameArray;
     }
 
-    @Override
-    public void updateCar(String car, String brand, String model, Double price, String description) {
-        for (Map.Entry<String, Car> carSet : carMap.entrySet()){
-            if (carSet.getValue().getBrand().equals(car)){
-                carSet.getValue().setBrand(brand);
-                carSet.getValue().setModel(model);
-                carSet.getValue().setPrice(price);
-                carSet.getValue().setDescription(description);
-            }
-        }
+   /*@Override
+    public void updateCar(String carKey, Car car){
+        carMap.replace(carKey, car);
+        carMap.remove(carKey);
+        carMap.put(car.getBrand(), car);
+
         wirteJSON(filename);
-        
     }
+
+    @Override
+    public void updateCar(String car, String brand, String model, String year, String price, String color, String fuel, String seats, String doors, String transmission, String description) {
+
+    }
+
+    @Override
+    public void userRentCar(String car, String renter) {
+
+    }
+
+    @Override
+    public void userReturnCar(String car) {
+
+    }
+
+    @Override
+    public boolean carExists(String userInput) {
+        return false;
+    }
+
+    @Override
+    public void rentCar(Car car){
+        car.setRented(true);
+
+        wirteJSON(filename);
+    }
+
+    @Override
+    public void returnCar(Car car){
+        car.setRented(false);
+
+        wirteJSON(filename);
+    }
+    
+    @Override
+    public void userRentCar(User user, Car car){
+        car.setRentersName(user.getName());
+
+        wirteJSON(filename);
+    }
+
+    @Override
+    public void userReturnCar(User user, Car car){
+        car.setRentersName(null);
+
+        wirteJSON(filename);
+    }*/
 
 }
