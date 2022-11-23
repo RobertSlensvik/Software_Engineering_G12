@@ -25,7 +25,7 @@ public class Controller {
 
 
 
-    public Controller(UserRepository userRepository){
+    public Controller(UserRepository userRepository, CarRepository carRepository, StoreRepository storeRepository){
         this.userRepository = userRepository;
         this.storeRepository = storeRepository;
         this.carRepository = carRepository;
