@@ -1,11 +1,8 @@
 package org.example.Repository;
 
 import org.example.Model.Car;
-import org.example.Model.User;
-import org.example.Model.Store;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.io.IOException;
 import java.io.File;
 import java.util.Map;
 
@@ -103,12 +100,7 @@ public class CarRepoJSON implements CarRepository {
 
     @Override
     public Car getCar(String carKey){
-        for (Map.Entry<String, Car> carSet : carMap.entrySet()){
-            if (carSet.getKey().equals(carKey)){
-                return carSet.getValue();
-            }
-        }
-        return null;
+        return carMap.get(carKey);
     }
 
     @Override
