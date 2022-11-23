@@ -31,4 +31,12 @@ public class User {
 
     public void setMoney(double d) {
     }
+
+    public String getActiveRentals() {
+        return null;
+    }
+
+    public String getRentHistory() {
+        return null;
+    }
 }

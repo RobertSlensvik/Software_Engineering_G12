@@ -55,7 +55,7 @@ public class CarRepoJSON implements CarRepository {
         return Cars;
     }
 
-    @Override
+   /* @Override
     public ArrayList<String> showCarName(boolean showAll, String carType){
         ArrayList<String> carNameArray = new ArrayList<>();
 
@@ -74,9 +74,9 @@ public class CarRepoJSON implements CarRepository {
             }
         }
         return carNameArray;
-    }
+    }*/
     
-    @Override
+    /*@Override
     public HashMap<String, Car> showRentHistory(){
         HashMap<String, Car> rentHistory = new HashMap<>();
 
@@ -86,9 +86,10 @@ public class CarRepoJSON implements CarRepository {
             }
         }
         return rentHistory;
-    }
+    }*/
 
-    @Override 
+    @Override
+    public 
     boolean isEmpty(){
         ArrayList<String> carNameArray = new ArrayList<>();
 
@@ -125,6 +126,49 @@ public class CarRepoJSON implements CarRepository {
     }
 
     @Override
+    public ArrayList<String> showCarName() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public void rentCar(String car, String renter) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void returnCar(String car) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void updateCar(String car, String brand, String model, String year, String price, String color, String fuel,
+            String seats, String doors, String transmission, String description) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void userRentCar(String car, String renter) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void userReturnCar(String car) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public boolean carExists(String userInput) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+   /* @Override
     public void updateCar(String carKey, Car car){
         carMap.replace(carKey, car);
         carMap.remove(carKey);
@@ -159,6 +203,6 @@ public class CarRepoJSON implements CarRepository {
         car.setRentersName(null);
 
         wirteJSON(filename);
-    }
+    }*/
 
 }

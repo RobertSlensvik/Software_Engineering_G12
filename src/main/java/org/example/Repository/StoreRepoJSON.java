@@ -30,10 +30,6 @@ public class StoreRepoJSON implements StoreRepository{
         ArrayList<Store> storeArray = new ArrayList<>(storeMap.values());
     }
 
-
-
-
-
     @Override
     public Store getStore(String storeKey) {
         return storeMap.get(storeKey);

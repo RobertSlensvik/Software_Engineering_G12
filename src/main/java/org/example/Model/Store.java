@@ -24,4 +24,12 @@ public class Store {
     public void setBalance(double bankBalance){
         this.bankBalance = bankBalance;
     }
+
+    public String getActiveRentals() {
+        return null;
+    }
+
+    public String getRentHistory() {
+        return null;
+    }
 }
