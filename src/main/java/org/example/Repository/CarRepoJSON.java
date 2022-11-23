@@ -133,8 +133,7 @@ public class CarRepoJSON implements CarRepository {
 
 
     @Override
-    public void updateCar(String car, String brand, String model, String year, String price, String color, String fuel,
-            String seats, String doors, String transmission, String description) {
+    public void updateCar(String car, String brand, String model, Double price, String description) {
         for (Map.Entry<String, Car> carSet : carMap.entrySet()){
             if (carSet.getValue().getBrand().equals(car)){
                 carSet.getValue().setBrand(brand);

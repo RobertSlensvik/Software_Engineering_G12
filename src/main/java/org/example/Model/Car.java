@@ -11,7 +11,7 @@ public class Car {
     private String buyer;
     private boolean rented;
 
-    public Car(String carName, String rentersName, String model, String brand, double price, String color, String description){
+    public Car(String carName, String rentersName, String model, String brand, double price, String description){
 
     }
 

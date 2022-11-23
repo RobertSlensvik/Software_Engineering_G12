@@ -112,7 +112,7 @@ public class Controller {
             else{
                 System.out.println("\n That user does not exist");
 
-                user(currentUser);
+                loginSystem();
             }
 
         }
@@ -159,7 +159,6 @@ public class Controller {
             if(rentalNamesArray.isEmpty()){
                 System.out.println("\n No one registered.");
             }
-            store(currentStore);
         }
 
         public void newUser(){
@@ -179,6 +178,7 @@ public class Controller {
                 userRepository.addUser(user);
                 user(user);
             }
+            goBack();
             
         }
 
@@ -196,9 +196,8 @@ public class Controller {
                                 "\n2. Rent out a car"+
                                 "\n3. Show active rentals"+
                                 "\n4. End rental time"+
-                                "\n5. Show rental history"+
-                                "\n6. See balance"+
-                                "\n7. Log out"+
+                                "\n5. See balance"+
+                                "\n6. Log out"+
                                 "\n======================================");
             choice = inputScanner.nextInt();
 
@@ -230,8 +229,8 @@ public class Controller {
             Scanner inputScanner = new Scanner(System.in);
             System.out.println("\n ============Cars==============" +
                                 "\n1. See all cars"+
-                                "\n2. See rented cars"+
-                                "\n3. Go back"+
+                                "\n3. See rented cars"+
+                                "\n4. Go back"+
                                 "\n======================================");
             choice = inputScanner.nextInt();
 
@@ -327,7 +326,7 @@ public class Controller {
                 System.out.println("\n Write the description of the car");
                 description = inputScanner.nextLine();
 
-                Car car = new Car(carName,rentersName, model, brand, price, color, description);
+                Car car = new Car(carName, model, brand, price, color, description);
                 carRepository.addCar(car);
                 updateCars();
             }
@@ -439,13 +438,14 @@ public class Controller {
        }
 
        public void seeUser(){
-            System.out.println("\n All the users:");
+            System.out.println("\n All the users");
 
-            ArrayList<String> userHashMap = userRepository.showUserName();
+            HashMap<String, User> userHashMap = userRepository.showUser();
 
-            for(String user : userHashMap){
-                System.out.println(user);
+            for(Map.Entry<String, User> user : userHashMap.entrySet()){
+                System.out.println(user.getKey() + " " + user.getValue());
             }
+            goBack();
        }
 
 }
