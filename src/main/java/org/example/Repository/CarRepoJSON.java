@@ -55,7 +55,7 @@ public class CarRepoJSON implements CarRepository {
         return Cars;
     }
 
-   /* @Override
+   /*@Override
     public ArrayList<String> showCarName(boolean showAll, String carType){
         ArrayList<String> carNameArray = new ArrayList<>();
 
@@ -89,7 +89,7 @@ public class CarRepoJSON implements CarRepository {
     }*/
 
     @Override
-    public 
+    public
     boolean isEmpty(){
         ArrayList<String> carNameArray = new ArrayList<>();
 
@@ -125,50 +125,79 @@ public class CarRepoJSON implements CarRepository {
         wirteJSON(filename);
     }
 
-    @Override
-    public ArrayList<String> showCarName() {
-        // TODO Auto-generated method stub
-        return null;
-    }
 
     @Override
     public void rentCar(String car, String renter) {
-        // TODO Auto-generated method stub
+        for (Map.Entry<String, Car> carSet : carMap.entrySet()){
+            if (carSet.getValue().getBrand().equals(car)){
+                carSet.getValue().setRentersName(renter);
+            }
+        }
+        wirteJSON(filename);
         
     }
 
-    @Override
-    public void returnCar(String car) {
-        // TODO Auto-generated method stub
-        
-    }
 
     @Override
     public void updateCar(String car, String brand, String model, String year, String price, String color, String fuel,
             String seats, String doors, String transmission, String description) {
-        // TODO Auto-generated method stub
+        for (Map.Entry<String, Car> carSet : carMap.entrySet()){
+            if (carSet.getValue().getBrand().equals(car)){
+                carSet.getValue().setBrand(brand);
+                carSet.getValue().setModel(model);
+                carSet.getValue().setDescription(description);
+            }
+        }
         
     }
 
     @Override
     public void userRentCar(String car, String renter) {
-        // TODO Auto-generated method stub
+        for (Map.Entry<String, Car> carSet : carMap.entrySet()){
+            if (carSet.getValue().getBrand().equals(car)){
+                carSet.getValue().setRentersName(renter);
+            }
+        }
+        wirteJSON(filename);
+        
         
     }
 
     @Override
     public void userReturnCar(String car) {
-        // TODO Auto-generated method stub
+        for (Map.Entry<String, Car> carSet : carMap.entrySet()){
+            if (carSet.getValue().getBrand().equals(car)){
+                carSet.getValue().setRentersName(null);
+            }
+        }
+        wirteJSON(filename);
+        
         
     }
 
     @Override
     public boolean carExists(String userInput) {
-        // TODO Auto-generated method stub
+        for (Map.Entry<String, Car> carSet : carMap.entrySet()){
+            if (carSet.getValue().getBrand().equals(userInput)){
+                return true;
+            }
+        }
         return false;
     }
 
-   /* @Override
+    @Override
+    public ArrayList<String> showCarName() {
+        ArrayList<String> carNameArray = new ArrayList<>();
+
+        for (Map.Entry<String, Car> carSet : carMap.entrySet()){
+            if (carSet.getValue().getBrand() != null){
+                carNameArray.add(carSet.getValue().getBrand());
+            }
+        }
+        return carNameArray;
+    }
+
+   /*@Override
     public void updateCar(String carKey, Car car){
         carMap.replace(carKey, car);
         carMap.remove(carKey);
