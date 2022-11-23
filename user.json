@@ -1,13 +1,7 @@
 [ {
-  "name" : "Mo",
+  "name" : "mo",
   "money" : 0.0,
   "balance" : 0.0,
-  "activeRentals" : null,
-  "rentHistory" : null
-}, {
-  "name" : "Robert",
-  "money" : 0.0,
-  "balance" : 0.0,
-  "activeRentals" : null,
-  "rentHistory" : null
+  "rentHistory" : null,
+  "activeRentals" : null
 } ]
