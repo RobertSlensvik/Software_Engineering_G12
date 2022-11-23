@@ -1,6 +1,8 @@
 package org.example.Repository;
 
 import org.example.Model.Store;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,6 +12,7 @@ public class StoreRepoJSON implements StoreRepository{
 
     private String fileName;
     HashMap<String, Store> storeMap = new HashMap<>();
+    ObjectMapper objectMapper = new ObjectMapper();
 
     public StoreRepoJSON(String fileName){
         this.fileName = fileName;
@@ -22,10 +25,22 @@ public class StoreRepoJSON implements StoreRepository{
         Store[] storeArray = new Store[0];
         HashMap<String, Store> retuMap = new HashMap<>();
         File file = new File(fileName);
+
+        try {
+            storeArray = objectMapper.readValue(file, Store[].class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void writeJSON(String fileName){
         ArrayList<Store> storeArray = new ArrayList<>(storeMap.values());
+
+        try {
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(fileName), storeArray);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

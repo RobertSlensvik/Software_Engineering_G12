@@ -14,7 +14,7 @@ public interface CarRepository {
     void rentCar(String car, String renter);
     void addCar(Car car);
     void removeCar(String car);
-    void updateCar(String car, String brand, String model, String year, String price, String color, String fuel, String seats, String doors, String transmission, String description);
+    void updateCar(String car, String brand, String model, Double price, String description);
     void userRentCar(String car, String renter);
     void userReturnCar(String car);
     boolean carExists(String userInput);
