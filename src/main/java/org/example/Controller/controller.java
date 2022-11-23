@@ -159,6 +159,7 @@ public class Controller {
             if(rentalNamesArray.isEmpty()){
                 System.out.println("\n No one registered.");
             }
+            store(currentStore);
         }
 
         public void newUser(){
@@ -178,7 +179,6 @@ public class Controller {
                 userRepository.addUser(user);
                 user(user);
             }
-            store(currentStore);
             
         }
 

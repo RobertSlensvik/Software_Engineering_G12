@@ -1,5 +1,7 @@
 package org.example.Repository;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.IO.IOException;
 import org.example.Model.*;
 import java.io.File;
 import java.io.IOException;
@@ -11,13 +13,14 @@ public class UserRepoJSON implements UserRepository{
     private String filename;
 
     HashMap<String, User> userMap = new HashMap<>();
+    ObjectMapper objectMapper = new ObjectMapper();
 
 
     public UserRepoJSON(String filename){
         this.filename = filename;
 
         readJSON(filename);
-        wirteJSON(filename);
+        writeJSON(filename);
     }
 
     public void readJSON(String filename){
@@ -26,7 +29,7 @@ public class UserRepoJSON implements UserRepository{
         File file = new File(filename);
     }
 
-    public void wirteJSON(String filename){
+    public void writeJSON(String filename){
         ArrayList<User> userArray = new ArrayList<>(userMap.values());
     }
 
