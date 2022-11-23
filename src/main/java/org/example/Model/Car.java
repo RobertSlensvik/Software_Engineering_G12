@@ -11,7 +11,7 @@ public class Car {
     private String buyer;
     private boolean rented;
 
-    public Car(){
+    public Car(String carName, String rentersName, String model, String brand, double price, String color, String description){
 
     }
 
@@ -23,7 +23,6 @@ public class Car {
         this.price = price;
         this.rentersName = rentersName;
         this.buyer = buyer;
-        this.rented = rented;
     }
 
     public String getBrand() {

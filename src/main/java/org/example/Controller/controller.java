@@ -112,7 +112,7 @@ public class Controller {
             else{
                 System.out.println("\n That user does not exist");
 
-                loginSystem();
+                user(currentUser);
             }
 
         }
@@ -178,7 +178,7 @@ public class Controller {
                 userRepository.addUser(user);
                 user(user);
             }
-            goBack();
+            store(currentStore);
             
         }
 
@@ -326,7 +326,7 @@ public class Controller {
                 System.out.println("\n Write the description of the car");
                 description = inputScanner.nextLine();
 
-                Car car = new Car(carName, model, brand, price, color, description);
+                Car car = new Car(carName,rentersName, model, brand, price, color, description);
                 carRepository.addCar(car);
                 updateCars();
             }
