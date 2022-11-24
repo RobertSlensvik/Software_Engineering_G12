@@ -1,6 +1,5 @@
 package org.example.Model;
 
-import javax.swing.text.StyledEditorKit.BoldAction;
 
 public class Car {
     private String brand;

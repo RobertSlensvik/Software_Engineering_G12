@@ -1,7 +1,6 @@
 package org.example;
 
 import org.example.Controller.Controller;
-import org.example.Model.*;
 import org.example.Repository.*;
 
 

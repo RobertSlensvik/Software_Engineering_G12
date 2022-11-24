@@ -1,6 +1,6 @@
 package org.example.Controller;
-import java.util.*;
 
+import java.util.*;
 import org.example.Model.User;
 import org.example.Model.Store;
 import org.example.Model.Car;
@@ -57,7 +57,7 @@ public class Controller {
                 case 4:
                     newUser();        // Make a new user
                 case 5:
-                    break;             // Leave
+                    System.exit(0);             // Leave
             }
         }
     
@@ -174,7 +174,7 @@ public class Controller {
                 loginSystem();
             }
             else{
-                User user = new User(userName, 0);
+                User user = new User(userName, 10000);
                 userRepository.addUser(user);
                 user(user);
             }
@@ -230,7 +230,7 @@ public class Controller {
             System.out.println("\n ============Cars==============" +
                                 "\n1. See all cars"+
                                 "\n3. See rented cars"+
-                                "\n4. Go back"+
+                                "\n3. Go back"+
                                 "\n======================================");
             choice = inputScanner.nextInt();
 
@@ -248,13 +248,19 @@ public class Controller {
         public void showCarName(){ 
             System.out.println("\n All the cars");
 
-            HashMap<String, Car> carHashMap = carRepository.showAvalibleCars();
+            ArrayList<String> carHashMap = carRepository.showCarName();
 
-            for(Map.Entry<String, Car> car : carHashMap.entrySet()){
-                System.out.println(car.getKey() + " " + car.getValue());
+            if (carHashMap.isEmpty()){
+                System.out.println("\n No cars available");
+            }
+            else{
+                for(String carName : carHashMap){
+                    System.out.println(carName);
+                }
+            }
+            goBack();
         }
-            seeCars();
-     }
+     
 
         public void showAvalibleCars(){
             System.out.println("\n All the avalible cars");
@@ -326,7 +332,7 @@ public class Controller {
                 System.out.println("\n Write the description of the car");
                 description = inputScanner.nextLine();
 
-                Car car = new Car(carName, model, brand, price, color, description);
+                Car car = new Car(rentersName, model, brand, price, color, description);
                 carRepository.addCar(car);
                 updateCars();
             }

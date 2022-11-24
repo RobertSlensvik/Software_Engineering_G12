@@ -1,15 +1,18 @@
 package org.example.Repository;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.Model.Car;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.io.File;
+import java.io.IOException;
 import java.util.Map;
 
 
 public class CarRepoJSON implements CarRepository {
     private String filename;
     HashMap<String, Car> carMap = new HashMap<>();
+    ObjectMapper objectMapper = new ObjectMapper();
 
     public CarRepoJSON(String filename){
         this.filename = filename;
@@ -22,10 +25,22 @@ public class CarRepoJSON implements CarRepository {
         Car[] carArray = new Car[0];
         HashMap<String, Car> returnMap = new HashMap<>();
         File file = new File(filename);
+
+        try {
+            carArray = objectMapper.readValue(file, Car[].class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void wirteJSON(String filename){
         ArrayList<Car> carArray = new ArrayList<>(carMap.values());
+
+        try {
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(filename), carArray);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
