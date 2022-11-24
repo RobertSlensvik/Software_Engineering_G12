@@ -45,7 +45,7 @@ public class CarRepoJSON implements CarRepository {
 
     @Override
     public HashMap<String, Car> showAvalibleCars() {
-        HashMap<String, Car> Cars = new HashMap<>();
+        HashMap<String, Car> Cars = new HashMap<>(carMap);
 
         for (Map.Entry<String, Car> carSet : carMap.entrySet()){
             if (carSet.getValue().getRentersName() == null){

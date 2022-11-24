@@ -1,1 +1,9 @@
-[ ]
+[ {
+  "brand" : "Mo",
+  "model" : "Audi",
+  "price" : 99.0,
+  "rentersName" : "blue",
+  "buyer" : "Small car",
+  "rented" : false,
+  "decsription" : ""
+} ]
