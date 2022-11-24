@@ -317,9 +317,6 @@ public class Controller {
                 System.out.println("\n Write the name of the renter");
                 rentersName = inputScanner.nextLine();
 
-                System.out.println("\n Write the price of the car");
-                price = inputScanner.nextDouble();
-
                 System.out.println("\n Write the brand of the car");
                 brand = inputScanner.nextLine();
 
@@ -331,6 +328,9 @@ public class Controller {
 
                 System.out.println("\n Write the description of the car");
                 description = inputScanner.nextLine();
+
+                System.out.println("\n Write the price of the car");
+                price = inputScanner.nextDouble();
 
                 Car car = new Car(rentersName, model, brand, price, color, description);
                 carRepository.addCar(car);
