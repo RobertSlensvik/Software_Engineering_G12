@@ -79,7 +79,7 @@ public class UserRepoJSON implements UserRepository{
         writeJSON(fileName);
     }
 
-    @Override
+    /*@Override
     public void depositMoney(User user, double money) {
         user.setMoney(user.getMoney() + money);
         
@@ -92,7 +92,7 @@ public class UserRepoJSON implements UserRepository{
         user.setMoney(user.getMoney() - money);
         
         writeJSON(fileName);
-    }
+    }*/
 
     @Override
     public boolean userExists(String userName) {

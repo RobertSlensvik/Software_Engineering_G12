@@ -10,21 +10,21 @@ import java.util.Map;
 
 public class StoreRepoJSON implements StoreRepository{
 
-    private String fileName;
+    private String filename;
     HashMap<String, Store> storeMap = new HashMap<>();
     ObjectMapper objectMapper = new ObjectMapper();
 
-    public StoreRepoJSON(String fileName){
-        this.fileName = fileName;
+    public StoreRepoJSON(String filename){
+        this.filename = filename;
 
-        readJSON(fileName);
-        writeJSON(fileName);
+        readJSON(filename);
+        writeJSON(filename);
     }
 
-    public void readJSON(String fileName){
+    public void readJSON(String filename){
         Store[] storeArray = new Store[0];
         HashMap<String, Store> retuMap = new HashMap<>();
-        File file = new File(fileName);
+        File file = new File(filename);
 
         try {
             storeArray = objectMapper.readValue(file, Store[].class);
@@ -33,11 +33,11 @@ public class StoreRepoJSON implements StoreRepository{
         }
     }
 
-    public void writeJSON(String fileName){
+    public void writeJSON(String filename){
         ArrayList<Store> storeArray = new ArrayList<>(storeMap.values());
 
         try {
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(fileName), storeArray);
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(filename), storeArray);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -61,6 +61,11 @@ public class StoreRepoJSON implements StoreRepository{
             storeNameArray.add(storeSet.getValue().getName());
         }
         return storeNameArray;
+    }
+
+    @Override
+    public boolean storeExists(String userInput) {
+        return storeMap.containsKey(userInput);
     }
     
 }

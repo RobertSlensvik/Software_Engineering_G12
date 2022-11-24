@@ -25,18 +25,11 @@ public class User {
         this.bankBalance = bankBalance;
     }
 
-    public double getMoney() {
-        return 0;
-    }
-
-    public void setMoney(double d) {
-    }
-
     public String getActiveRentals() {
-        return null;
+        return name;
     }
 
     public String getRentHistory() {
-        return null;
+        return name;
     }
 }

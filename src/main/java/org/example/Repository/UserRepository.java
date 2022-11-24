@@ -11,7 +11,7 @@ public interface UserRepository {
     ArrayList<String> showUserName();
     void addUser(User newUser);
     void removeUser(User user);
-    void depositMoney(User user, double money);
-    void withdrawMoney(User user, double money);
+    /*void depositMoney(User user, double money);
+    void withdrawMoney(User user, double money);*/
     boolean userExists(String userName);
 }
