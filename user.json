@@ -1,6 +1,16 @@
 [ {
   "name" : "mo",
-  "rentHistory" : "mo",
+  "activeRentals" : "mo",
   "balance" : 10000.0,
-  "activeRentals" : "mo"
+  "rentHistory" : "mo"
+}, {
+  "name" : "to",
+  "activeRentals" : "to",
+  "balance" : 10000.0,
+  "rentHistory" : "to"
+}, {
+  "name" : "ro",
+  "activeRentals" : "ro",
+  "balance" : 10000.0,
+  "rentHistory" : "ro"
 } ]

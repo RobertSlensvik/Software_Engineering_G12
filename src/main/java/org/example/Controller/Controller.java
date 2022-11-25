@@ -154,7 +154,7 @@ public class Controller {
 
         public void loginCarRental(){
             System.out.println("\n Which user are renting out?");
-            ArrayList<String> rentalNamesArray = userRepository.showUserName();
+            ArrayList<String> rentalNamesArray = storeRepository.showRentalUser();
 
             if(rentalNamesArray.isEmpty()){
                 System.out.println("\n No one registered.");
@@ -173,6 +173,7 @@ public class Controller {
             }
             else{
                 System.out.println("\n That user does not exist");
+                //loginSystem();
             }
             store(currentStore);
         }
