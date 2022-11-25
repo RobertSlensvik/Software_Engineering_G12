@@ -8,7 +8,7 @@ import org.example.Repository.StoreRepository;
 import org.example.Repository.UserRepository;
 import org.example.Repository.CarRepository;
 
-public class Controller{
+public class Controller {
     //Reposetories
     private UserRepository userRepository;
     private StoreRepository storeRepository;
@@ -37,7 +37,7 @@ public class Controller{
             int choice;
             Scanner inputScanner = new Scanner(System.in);
     
-            System.out.println("\n\n================== LOGIN PANEL ===============" +
+            System.out.println("\n\n================== LOGIN Panel ===============" +
                     "\n1. Log in as admin" +
                     "\n2. Log in as user" +
                     "\n3. Log in as car rental" +
@@ -68,7 +68,7 @@ public class Controller{
 
         int choice;
         Scanner inputScanner = new Scanner(System.in);
-        System.out.println("\n\n================== ADMIN ===============" +
+        System.out.println("\n\n================== Admin ===============" +
             "\n1. See cars" +
             "\n2. Update cars" +
             "\n3. Purchase History" +
@@ -114,7 +114,7 @@ public class Controller{
 
                 loginSystem();
             }
-            user(currentUser);
+
         }
         public void user(User user){
             currentUser = user;
@@ -125,7 +125,7 @@ public class Controller{
 
             int choice;
             Scanner inputScanner = new Scanner(System.in);
-            System.out.println("\n ============ User ==============" +
+            System.out.println("\n ============User==============" +
             "\n1. See Cars"+
             "\n2. Rent a car"+
             "\n3. Show rented cars"+
@@ -164,19 +164,17 @@ public class Controller{
                     System.out.println(rentalName);
                 }
             }
-            String userInput;
+            String userinput;
             Scanner inputScanner = new Scanner(System.in);
-            userInput = inputScanner.nextLine();
-
-            if (storeRepository.storeExists(userInput)){
-                store(storeRepository.getStore(userInput));
+            userinput = inputScanner.nextLine();
+            if (storeRepository.storeExists(userinput)){
+                store(storeRepository.getStore(userinput));
+                System.out.println("Test");
             }
             else{
-                System.out.println("\n That store does not exist");
-                //loginSystem();
+                System.out.println("\n That user does not exist");
             }
             store(currentStore);
-
         }
 
         public void newUser(){
@@ -209,7 +207,7 @@ public class Controller{
 
             int choice;
             Scanner inputScanner = new Scanner(System.in);
-            System.out.println("\n ============Car Rental==============" +     
+            System.out.println("\n ============Car Rental==============" +
                                 "\n1. Rent out a car"+
                                 "\n2. Show active rentals"+
                                 "\n3. End rental time"+
@@ -251,7 +249,7 @@ public class Controller{
                 case 1:
                     showAvalibleCars();
                 case 2:
-                    showRentHistory();
+                 purchaseHistory();   ;
                 case 3:
                     goBack();
             }
@@ -310,8 +308,8 @@ public class Controller{
         }
 
         public void addCar(){
-            String rentersName;
             String carName;
+            String rentersName;
             double price;
             String brand;
             String model;
@@ -337,16 +335,17 @@ public class Controller{
                 System.out.println("\n Write the description of the car");
                 description = inputScanner.nextLine();
 
-                System.out.println("\n Wich user are you renting out?");
-                rentersName = inputScanner.nextLine();
-
                 System.out.println("\n Write the color of the car");
                 color = inputScanner.nextLine();
+
+
+                System.out.println("\n Write the name of the renter");
+                rentersName = inputScanner.nextLine();
 
                 System.out.println("\n Write the price of the car");
                 price = inputScanner.nextDouble();
 
-                Car car = new Car(brand, model, description, rentersName, price, color);
+                Car car = new Car(brand, model , description,price,rentersName,color);
                 carRepository.addCar(car);
                 updateCars();
             }
@@ -372,7 +371,7 @@ public class Controller{
 
         public void purchaseHistory() {
             System.out.println("\n Purchase history");
-            //TODO
+
             HashMap<String, Car> carHashMap = carRepository.showAvalibleCars();
 
             for(Map.Entry<String, Car> car : carHashMap.entrySet()){
@@ -395,7 +394,7 @@ public class Controller{
 
         public Car rentCar(){
             System.out.println("\n Wich car do you want to rent out?");
-            HashMap<String, Car> carNamesArray = carRepository.showAvalibleCars();
+            HashMap<String,Car> carNamesArray = carRepository.showAvalibleCars();
 
             if (carNamesArray.isEmpty()){
                 System.out.println("\n No cars available");
@@ -404,7 +403,9 @@ public class Controller{
                 for(Map.Entry<String, Car> car : carNamesArray.entrySet()){
                     System.out.println(car.getKey() + " " + car.getValue());
                 }
-            }
+                }
+
+
             String userInput;
             Scanner inputScanner = new Scanner(System.in);
             userInput = inputScanner.nextLine();

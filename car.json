@@ -1,9 +1,9 @@
 [ {
-  "brand" : null,
-  "model" : null,
-  "price" : 0.0,
-  "rentersName" : null,
+  "brand" : "Fiesta",
+  "model" : "2001",
+  "price" : 9009.0,
+  "rentersName" : "mo",
   "rented" : false,
-  "buyer" : null,
-  "decsription" : null
+  "decsription" : "Cool car to drive",
+  "buyer" : "red"
 } ]
