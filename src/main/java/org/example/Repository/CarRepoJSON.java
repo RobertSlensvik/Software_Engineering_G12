@@ -14,6 +14,7 @@ public class CarRepoJSON implements CarRepository {
     HashMap<String, Car> carMap = new HashMap<>();
     ObjectMapper objectMapper = new ObjectMapper();
 
+
     public CarRepoJSON(String filename){
         this.filename = filename;
 
@@ -45,7 +46,7 @@ public class CarRepoJSON implements CarRepository {
 
     @Override
     public HashMap<String, Car> showAvalibleCars() {
-        HashMap<String, Car> Cars = new HashMap<>();
+        HashMap<String, Car> Cars = new HashMap<>(carMap);
 
         for (Map.Entry<String, Car> carSet : carMap.entrySet()){
             if (carSet.getValue().getRentersName() == null){
@@ -58,12 +59,12 @@ public class CarRepoJSON implements CarRepository {
 
 
     @Override
-    public ArrayList<Car> showCar(String Car) {
-        ArrayList<Car> Cars = new ArrayList<>();
+    public HashMap<String, Car> showCar(String Car) {
+        HashMap<String, Car> Cars = new HashMap<>(carMap);
 
         for (Map.Entry<String, Car> carSet : carMap.entrySet()){
-            if (carSet.getValue().getBrand().equals(Car)){
-                Cars.add(carSet.getValue());
+            if (carSet.getValue().getRentersName() == null){
+                Cars.put(carSet.getKey(), carSet.getValue());
             }
         }
         return Cars;
@@ -136,18 +137,6 @@ public class CarRepoJSON implements CarRepository {
 
 
     @Override
-    public void rentCar(String car, String renter) {
-        for (Map.Entry<String, Car> carSet : carMap.entrySet()){
-            if (carSet.getValue().getBrand().equals(car)){
-                carSet.getValue().setRentersName(renter);
-            }
-        }
-        wirteJSON(filename);
-        
-    }
-
-
-    @Override
     public void updateCar(String car, String brand, String model, Double price, String description) {
         for (Map.Entry<String, Car> carSet : carMap.entrySet()){
             if (carSet.getValue().getBrand().equals(car)){
@@ -164,6 +153,8 @@ public class CarRepoJSON implements CarRepository {
         for (Map.Entry<String, Car> carSet : carMap.entrySet()){
             if (carSet.getValue().getBrand().equals(car)){
                 carSet.getValue().setRentersName(renter);
+
+                //carSet.getValue().
             }
         }
         wirteJSON(filename);
@@ -205,61 +196,12 @@ public class CarRepoJSON implements CarRepository {
         return carNameArray;
     }
 
-   /*@Override
-    public void updateCar(String carKey, Car car){
-        carMap.replace(carKey, car);
-        carMap.remove(carKey);
-        carMap.put(car.getBrand(), car);
-
-        wirteJSON(filename);
+    @Override
+    public void rentCar(String car, String renter) {
+        // TODO Auto-generated method stub
+        
     }
 
-    @Override
-    public void updateCar(String car, String brand, String model, String year, String price, String color, String fuel, String seats, String doors, String transmission, String description) {
-
-    }
-
-    @Override
-    public void userRentCar(String car, String renter) {
-
-    }
-
-    @Override
-    public void userReturnCar(String car) {
-
-    }
-
-    @Override
-    public boolean carExists(String userInput) {
-        return false;
-    }
-
-    @Override
-    public void rentCar(Car car){
-        car.setRented(true);
-
-        wirteJSON(filename);
-    }
-
-    @Override
-    public void returnCar(Car car){
-        car.setRented(false);
-
-        wirteJSON(filename);
-    }
-    
-    @Override
-    public void userRentCar(User user, Car car){
-        car.setRentersName(user.getName());
-
-        wirteJSON(filename);
-    }
-
-    @Override
-    public void userReturnCar(User user, Car car){
-        car.setRentersName(null);
-
-        wirteJSON(filename);
-    }*/
+   
 
 }

@@ -7,7 +7,7 @@ public class Car {
     private String description;
     private double price;
     private String rentersName;
-    private String buyer;
+    private String color;
     private boolean rented;
 
     public Car(String carName, String rentersName, String model, String brand, double price, String description){
@@ -15,13 +15,13 @@ public class Car {
     }
 
 
-    public Car(String brand, String model, String description, double price, String rentersName, String buyer) {
+    public Car(String brand, String model, String description, double price, String rentersName, String color) {
         this.brand = brand;
         this.model = model;
         this.description = description;
         this.price = price;
         this.rentersName = rentersName;
-        this.buyer = buyer;
+        this.color = color;
     }
 
     public String getBrand() {
@@ -60,10 +60,10 @@ public class Car {
         this.rentersName = rentersName;
     }
     public String getBuyer() {
-        return buyer;
+        return color;
     }
     public void setBuyer(String buyer) {
-        this.buyer = buyer;
+        this.color = buyer;
     }
     public Boolean getRented() {
         return rented;
@@ -74,7 +74,7 @@ public class Car {
 
     @Override
     public String toString(){
-        return "Car [brand=" + brand + ", model=" + model + ", description=" + description + ", price=" + price + ", rentersName=" + rentersName + ", buyer=" + buyer + "]";
+        return "Car [brand=" + brand + ", model=" + model + ", description=" + description + ", rentersName=" + rentersName + ", color=" + color + ", price=" + price +"]";
     }
 
 

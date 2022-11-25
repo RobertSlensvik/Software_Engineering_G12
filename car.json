@@ -1,1 +1,9 @@
-[ ]
+[ {
+  "brand" : null,
+  "model" : null,
+  "price" : 0.0,
+  "rentersName" : null,
+  "rented" : false,
+  "buyer" : null,
+  "decsription" : null
+} ]

@@ -26,10 +26,10 @@ public class Store {
     }
 
     public String getActiveRentals() {
-        return null;
+        return name;
     }
 
     public String getRentHistory() {
-        return null;
+        return name;
     }
 }

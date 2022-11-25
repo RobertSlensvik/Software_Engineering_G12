@@ -8,4 +8,5 @@ public interface StoreRepository {
     Store getStore(String storeKey);
     HashMap<String, Store> showRental();
     ArrayList<String> showRentalUser();
+    boolean storeExists(String userInput);
 }

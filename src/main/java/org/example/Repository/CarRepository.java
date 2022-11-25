@@ -9,7 +9,7 @@ public interface CarRepository {
 
     boolean isEmpty();  
     HashMap<String, Car> showAvalibleCars();
-    ArrayList<Car> showCar(String Car);
+    HashMap<String, Car> showCar(String Car);
     ArrayList<String> showCarName();
     void rentCar(String car, String renter);
     void addCar(Car car);
