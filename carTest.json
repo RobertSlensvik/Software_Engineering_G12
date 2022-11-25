@@ -1,0 +1,9 @@
+[ {
+  "brand" : "Audi",
+  "model" : "e-tron",
+  "price" : 600.0,
+  "rentersName" : "so",
+  "rented" : false,
+  "decsription" : "Electric",
+  "buyer" : "red"
+} ]
