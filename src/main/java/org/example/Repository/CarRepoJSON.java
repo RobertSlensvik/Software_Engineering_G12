@@ -59,7 +59,7 @@ public class CarRepoJSON implements CarRepository {
 
 
     @Override
-    public HashMap<String, Car> showCar(String Car) {
+    public HashMap<String, Car> showCar() {
         HashMap<String, Car> Cars = new HashMap<>(carMap);
 
         for (Map.Entry<String, Car> carSet : carMap.entrySet()){

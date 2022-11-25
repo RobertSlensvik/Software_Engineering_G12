@@ -47,4 +47,18 @@ public class Car_test {
         Assertions.assertTrue(carRepository.showAvalibleCars().isEmpty());
 
     }
+
+    @Test
+    public void showCar_return_rented_cars(){
+        carRepository.addCar(newCar);
+
+        Assertions.assertNotNull(carRepository.showCar());
+    }
+
+    @Test
+    public void showCar_return_not_rented_cars(){
+        carRepository.removeCar(newCar.getBrand());
+
+        Assertions.assertTrue(carRepository.showCar().isEmpty());
+    }
 }
