@@ -4,6 +4,6 @@
   "price" : 600.0,
   "rentersName" : "so",
   "rented" : false,
-  "decsription" : "Electric",
-  "buyer" : "red"
+  "buyer" : "red",
+  "decsription" : "Electric"
 } ]

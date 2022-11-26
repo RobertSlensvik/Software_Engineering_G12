@@ -11,7 +11,7 @@ public class User_test {
     User newUser = new User("userTest", 100);
 
     @Test
-    public void userExists_returns_tru_if_user_exists(){
+    public void userExists_returns_true_if_user_exists(){
         userRepository.addUser(newUser);
         Assertions.assertTrue(userRepository.userExists("userTest"));
     }
@@ -29,14 +29,34 @@ public class User_test {
     }
 
     @Test
-    public void return_empty_userMap_if_user_Repo_is_empty(){
+    public void getuser_retun_null_if_user_does_not_exist(){
+        userRepository.removeUser(newUser);
+        Assertions.assertNull(userRepository.getUser("userTest"));
+    }
+
+
+    @Test
+    public void showUser_return_values_if_user_repo_is_not_empty(){
+        userRepository.addUser(newUser);
+        Assertions.assertNotNull(userRepository.showUser());
+    }
+
+    @Test
+    public void showUser_return_null_if_user_repo_is_empty(){
         userRepository.removeUser(newUser);
         Assertions.assertTrue(userRepository.showUser().isEmpty());
     }
 
     @Test
-    public void showUser_return_values_if_user_repo_is_not_empty(){
-        Assertions.assertNotNull(userRepository.showUser());
+    public void showUserNAme_retun_if_user_repo_is_not_empty(){
+        userRepository.addUser(newUser);
+        Assertions.assertNotNull(userRepository.showUserName());
+    }
+
+    @Test
+    public void showUserName_return_null_if_user_repo_is_empty(){
+        userRepository.removeUser(newUser);
+        Assertions.assertTrue(userRepository.showUserName().isEmpty());
     }
 
 }
