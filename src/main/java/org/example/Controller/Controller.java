@@ -37,7 +37,7 @@ public class Controller {
             int choice;
             Scanner inputScanner = new Scanner(System.in);
     
-            System.out.println("\n\n================== LOGIN Panel ===============" +
+            System.out.println("\n\n================== LOGIN PANEL ===============" +
                     "\n1. Log in as admin" +
                     "\n2. Log in as user" +
                     "\n3. Log in as car rental" +
@@ -68,7 +68,7 @@ public class Controller {
 
         int choice;
         Scanner inputScanner = new Scanner(System.in);
-        System.out.println("\n\n================== Admin ===============" +
+        System.out.println("\n\n================== ADMIN ===============" +
             "\n1. See cars" +
             "\n2. Update cars" +
             "\n3. Purchase History" +
@@ -125,7 +125,7 @@ public class Controller {
 
             int choice;
             Scanner inputScanner = new Scanner(System.in);
-            System.out.println("\n ============User==============" +
+            System.out.println("\n ============ USER ==============" +
             "\n1. See Cars"+
             "\n2. Rent a car"+
             "\n3. Show rented cars"+
@@ -164,28 +164,19 @@ public class Controller {
                 for(String userName : rentalNamesArray){
                     System.out.println(userName);
                 }
+                //store(currentStore);
             }
             String userinput;
             Scanner inputScanner = new Scanner(System.in);
             userinput = inputScanner.nextLine();
 
-            /*if (storeRepository.storeExists(userinput)){
-                store(storeRepository.getStore(userinput));
-            }
-            else{
-                System.out.println("\n That user does not exist");
-
-                loginSystem();
-            }*/
-            /*if (userRepository.userExists(userinput)){
-                user(userRepository.getUser(userinput));
-                
+            if (userRepository.userExists(userinput)){
+                store(currentStore);
             }
             else{
                 System.out.println("\n That user does not exist");
                 loginSystem();
             }
-            store(currentStore);*/
         }
 
         public void newUser(){
@@ -217,7 +208,7 @@ public class Controller {
 
             int choice;
             Scanner inputScanner = new Scanner(System.in);
-            System.out.println("\n ============Car Rental==============" +
+            System.out.println("\n ============ CAR RENTAL ==============" +
                                 "\n1. Rent out a car"+
                                 "\n2. Show active rentals"+
                                 "\n3. End rental time"+
@@ -248,7 +239,7 @@ public class Controller {
 
             int choice;
             Scanner inputScanner = new Scanner(System.in);
-            System.out.println("\n ============Cars==============" +
+            System.out.println("\n ============ CARS ==============" +
                                 "\n1. See all cars"+
                                 "\n2. See rented cars"+
                                 "\n3. Go back"+

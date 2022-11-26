@@ -1,6 +1,6 @@
 [ {
-  "name" : "mo",
+  "name" : "jo",
   "balance" : 10000.0,
-  "rentHistory" : "mo",
-  "activeRentals" : "mo"
+  "activeRentals" : "jo",
+  "rentHistory" : "jo"
 } ]
