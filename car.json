@@ -1,9 +1,1 @@
-[ {
-  "brand" : "fiesta",
-  "model" : "1900",
-  "price" : 900.0,
-  "rentersName" : "mo",
-  "rented" : false,
-  "buyer" : "blue",
-  "decsription" : "smol"
-} ]
+[ ]

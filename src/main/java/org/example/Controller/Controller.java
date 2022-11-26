@@ -154,26 +154,27 @@ public class Controller {
 
         public void loginCarRental(){
             System.out.println("\n Which user are renting out?");
-            ArrayList<String> rentalNamesArray = storeRepository.showRentalUser();
+            //ArrayList<String> rentalNamesArray = storeRepository.showRentalUser();
+            ArrayList<String> rentalNamesArray =  userRepository.showUserName();
 
             if(rentalNamesArray.isEmpty()){
                 System.out.println("\n No one registered.");
             }
             else{
-                for(String rentalName : rentalNamesArray){
-                    System.out.println(rentalName);
+                for(String userName : rentalNamesArray){
+                    System.out.println(userName);
                 }
             }
             String userinput;
             Scanner inputScanner = new Scanner(System.in);
             userinput = inputScanner.nextLine();
-            if (storeRepository.storeExists(userinput)){
-                store(storeRepository.getStore(userinput));
-                System.out.println("Test");
+            if (userRepository.userExists(userinput)){
+                user(userRepository.getUser(userinput));
+                
             }
             else{
                 System.out.println("\n That user does not exist");
-                //loginSystem();
+                loginSystem();
             }
             store(currentStore);
         }
@@ -193,9 +194,8 @@ public class Controller {
             else{
                 User user = new User(userName, 10000);
                 userRepository.addUser(user);
-                user(user);
+                loginSystem();
             }
-            goBack();
             
         }
 
