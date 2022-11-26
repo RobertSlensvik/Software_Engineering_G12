@@ -9,4 +9,5 @@ public interface StoreRepository {
     HashMap<String, Store> showRental();
     ArrayList<String> showRentalUser();
     boolean storeExists(String userInput);
+    void addCar(Store car);
 }

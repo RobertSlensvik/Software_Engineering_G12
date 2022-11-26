@@ -4,7 +4,7 @@ public class Store {
     private String name;
     private double bankBalance;
     
-    public Store(){
+    public Store(String string, double d){
 
     }
 

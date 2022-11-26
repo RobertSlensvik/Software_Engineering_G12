@@ -67,7 +67,11 @@ public class StoreRepoJSON implements StoreRepository{
     public boolean storeExists(String userInput) {
         return storeMap.containsKey(userInput);
     }
-
     
+    @Override
+    public void addCar(Store newCar) {
+        storeMap.put(newCar.getName(), newCar);
+        writeJSON(filename);
+    }
     
 }

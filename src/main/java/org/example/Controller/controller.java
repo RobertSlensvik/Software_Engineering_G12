@@ -168,7 +168,16 @@ public class Controller {
             String userinput;
             Scanner inputScanner = new Scanner(System.in);
             userinput = inputScanner.nextLine();
-            if (userRepository.userExists(userinput)){
+
+            /*if (storeRepository.storeExists(userinput)){
+                store(storeRepository.getStore(userinput));
+            }
+            else{
+                System.out.println("\n That user does not exist");
+
+                loginSystem();
+            }*/
+            /*if (userRepository.userExists(userinput)){
                 user(userRepository.getUser(userinput));
                 
             }
@@ -176,7 +185,7 @@ public class Controller {
                 System.out.println("\n That user does not exist");
                 loginSystem();
             }
-            store(currentStore);
+            store(currentStore);*/
         }
 
         public void newUser(){
@@ -403,6 +412,9 @@ public class Controller {
             else{
                 for(Map.Entry<String, Car> car : carNamesArray.entrySet()){
                     System.out.println(car.getKey() + " " + car.getValue());
+
+                    Store store = new Store(currentUser.getName(), car.getValue().getPrice());
+                    storeRepository.addCar(store);
                 }
                 }
 
