@@ -154,7 +154,6 @@ public class Controller {
 
         public void loginCarRental(){
             System.out.println("\n Which user are renting out?");
-            //ArrayList<String> rentalNamesArray = storeRepository.showRentalUser();
             ArrayList<String> rentalNamesArray =  userRepository.showUserName();
 
             if(rentalNamesArray.isEmpty()){
@@ -164,11 +163,12 @@ public class Controller {
                 for(String userName : rentalNamesArray){
                     System.out.println(userName);
                 }
-                //store(currentStore);
+                
             }
             String userinput;
             Scanner inputScanner = new Scanner(System.in);
             userinput = inputScanner.nextLine();
+            
 
             if (userRepository.userExists(userinput)){
                 store(currentStore);
