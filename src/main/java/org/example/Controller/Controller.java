@@ -409,7 +409,6 @@ public class Controller {
                 }
                 }
 
-
             String userInput;
             Scanner inputScanner = new Scanner(System.in);
             userInput = inputScanner.nextLine();
