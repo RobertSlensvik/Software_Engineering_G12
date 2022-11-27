@@ -78,5 +78,12 @@ public class Car {
     }
 
 
+    public String getColor() {
+        return color;
+    }
+    public String setColor(String color) {
+        return this.color = color;
+    }
+
 
 }

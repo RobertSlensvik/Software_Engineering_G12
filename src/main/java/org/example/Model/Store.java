@@ -4,11 +4,11 @@ public class Store {
     private String name;
     private double bankBalance;
     
-    public Store(String string, double d){
+    public Store(){
 
     }
 
-    public Store(String userName){
+    public Store(String brand, String model, String discription, double price, String rentersName, String color, String userName, double bankBalance){
         this.name = userName;
         this.bankBalance = 0;
     }

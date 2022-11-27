@@ -7,7 +7,7 @@ import org.example.Repository.StoreRepository;
 public class Store_test {
     StoreRepository storeRepository = new StoreRepoJSON("storeTest.json");
 
-    Store newStore = new Store("Robert");
+    Store newStore = new Store("Audi", "1999", "Big car", 900, "Robert", "Black", "Mohammed", 1000);
 
    /* @Test
     public void getStore_return_store_if_store_exists(){

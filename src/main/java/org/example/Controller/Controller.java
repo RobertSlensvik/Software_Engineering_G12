@@ -403,10 +403,12 @@ public class Controller {
             else{
                 for(Map.Entry<String, Car> car : carNamesArray.entrySet()){
                     System.out.println(car.getKey() + " " + car.getValue());
-
-                    Store store = new Store(currentUser.getName(), car.getValue().getPrice());
+                    double balance = currentUser.getBalance()-car.getValue().getPrice();
+                    Store store = new Store(car.getValue().getBrand(), car.getValue().getModel(), car.getValue().getDecsription(), car.getValue().getPrice(), car.getValue().getRentersName(),car.getValue().getColor(), currentUser.getName(), balance);
                     storeRepository.addCar(store);
+
                 }
+                removeCar();
                 }
 
             String userInput;
