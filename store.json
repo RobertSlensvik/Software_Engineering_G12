@@ -1,1 +1,6 @@
-[ ]
+[ {
+  "name" : "ei",
+  "balance" : 0.0,
+  "activeRentals" : "ei",
+  "rentHistory" : "ei"
+} ]

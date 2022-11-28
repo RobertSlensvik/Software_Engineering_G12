@@ -10,10 +10,6 @@ public class Car {
     private String color;
     private boolean rented;
 
-    public Car(String carName, String rentersName, String model, String brand, double price, String description){
-
-    }
-
 
     public Car(String brand, String model, String description, double price, String rentersName, String color) {
         this.brand = brand;
@@ -58,12 +54,6 @@ public class Car {
     }
     public void setRentersName(String rentersName) {
         this.rentersName = rentersName;
-    }
-    public String getBuyer() {
-        return color;
-    }
-    public void setBuyer(String buyer) {
-        this.color = buyer;
     }
     public Boolean getRented() {
         return rented;

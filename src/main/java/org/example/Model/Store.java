@@ -1,16 +1,16 @@
 package org.example.Model;
 
-public class Store {
+import org.example.Model.*;
+
+public class Store extends Car {
     private String name;
     private double bankBalance;
     
-    public Store(){
-
-    }
 
     public Store(String brand, String model, String discription, double price, String rentersName, String color, String userName, double bankBalance){
+        super(brand, model, discription, price, rentersName, color);
         this.name = userName;
-        this.bankBalance = 0;
+        this.bankBalance = bankBalance;
     }
     public String getName(){
         return name;

@@ -1,10 +1,10 @@
 [ {
-  "brand" : "Ford",
-  "model" : "Fiesta",
-  "price" : 900.0,
+  "brand" : "fiesta",
+  "model" : "1999",
+  "price" : 987.0,
   "rentersName" : "mo",
-  "color" : "red",
+  "color" : "black",
   "rented" : false,
-  "buyer" : "red",
-  "decsription" : "big car"
+  "decsription" : "big boi",
+  "buyer" : "black"
 } ]
