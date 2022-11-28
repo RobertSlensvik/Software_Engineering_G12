@@ -1,6 +1,5 @@
 package org.example.Model;
 
-import org.example.Model.*;
 
 public class Store extends Car {
     private String name;
