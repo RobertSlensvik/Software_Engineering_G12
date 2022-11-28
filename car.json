@@ -1,1 +1,10 @@
-[ ]
+[ {
+  "brand" : "Ford",
+  "model" : "Fiesta",
+  "price" : 900.0,
+  "rentersName" : "mo",
+  "color" : "red",
+  "rented" : false,
+  "buyer" : "red",
+  "decsription" : "big car"
+} ]

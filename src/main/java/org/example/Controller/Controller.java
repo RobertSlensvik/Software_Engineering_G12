@@ -303,7 +303,7 @@ public class Controller {
                 case 2:
                     removeCar();
                 case 3:
-                    loginAdmin();
+                    goBack();
             }
 
         }
