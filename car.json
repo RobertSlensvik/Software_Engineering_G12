@@ -1,9 +1,1 @@
-[ {
-  "brand" : "fiesta",
-  "model" : "199",
-  "price" : 900.0,
-  "rentersName" : "mo",
-  "color" : "red",
-  "rented" : false,
-  "decsription" : "city car"
-} ]
+[ ]

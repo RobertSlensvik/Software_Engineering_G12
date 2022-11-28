@@ -1,11 +1,6 @@
 [ {
-  "name" : "mo",
+  "name" : "aarati",
+  "activeRentals" : "aarati",
   "balance" : 10000.0,
-  "rentHistory" : "mo",
-  "activeRentals" : "mo"
-}, {
-  "name" : "ro",
-  "balance" : 10000.0,
-  "rentHistory" : "ro",
-  "activeRentals" : "ro"
+  "rentHistory" : "aarati"
 } ]

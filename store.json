@@ -1,13 +1,13 @@
 [ {
-  "brand" : "fiesta",
-  "model" : "199",
-  "price" : 900.0,
-  "rentersName" : "mo",
-  "color" : "red",
+  "brand" : "dfsa",
+  "model" : "fadf",
+  "price" : 123456.0,
+  "rentersName" : "afa",
+  "color" : "asdf",
   "rented" : false,
-  "name" : "ro",
-  "balance" : 9100.0,
-  "rentHistory" : "ro",
-  "activeRentals" : "ro",
-  "decsription" : "city car"
+  "name" : "aarati",
+  "activeRentals" : "aarati",
+  "balance" : -113456.0,
+  "rentHistory" : "aarati",
+  "decsription" : "asdfa"
 } ]
