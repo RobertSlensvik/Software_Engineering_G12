@@ -1,13 +1,1 @@
-[ {
-  "brand" : "dfsa",
-  "model" : "fadf",
-  "price" : 123456.0,
-  "rentersName" : "afa",
-  "color" : "asdf",
-  "rented" : false,
-  "name" : "aarati",
-  "activeRentals" : "aarati",
-  "balance" : -113456.0,
-  "rentHistory" : "aarati",
-  "decsription" : "asdfa"
-} ]
+[ ]

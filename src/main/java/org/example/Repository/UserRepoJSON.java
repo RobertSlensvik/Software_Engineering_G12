@@ -32,6 +32,10 @@ public class UserRepoJSON implements UserRepository{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        for(User user : userArray){
+            returnMap.put(user.getName(), user);
+        }
+        userMap = returnMap;
     }
 
     public void writeJSON(String fileName){
@@ -46,7 +50,12 @@ public class UserRepoJSON implements UserRepository{
 
     @Override
     public User getUser(String userKey) {
-        return userMap.get(userKey);
+        for(Map.Entry<String, User> userSet : userMap.entrySet()){
+            if(userSet.getKey().equals(userKey)){
+                return userSet.getValue();
+            }
+        }
+        return null;
     }
 
     @Override
@@ -56,7 +65,7 @@ public class UserRepoJSON implements UserRepository{
 
     @Override
     public ArrayList<String> showUserName() {
-        ArrayList userNamesArray = new ArrayList<>();
+        ArrayList<String> userNamesArray = new ArrayList<>();
 
         for (Map.Entry<String, User> userSet : userMap.entrySet()){
             userNamesArray.add(userSet.getValue().getName());
