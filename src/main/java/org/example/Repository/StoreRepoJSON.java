@@ -31,6 +31,10 @@ public class StoreRepoJSON implements StoreRepository{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        for(Store store : storeArray){
+            retuMap.put(store.getName(), store);
+        }
+        storeMap = retuMap;
     }
 
     public void writeJSON(String filename){

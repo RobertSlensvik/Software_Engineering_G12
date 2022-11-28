@@ -32,6 +32,10 @@ public class CarRepoJSON implements CarRepository {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        for(Car car : carArray){
+            returnMap.put(car.getBrand(), car);
+        }
+        carMap = returnMap;
     }
 
     public void wirteJSON(String filename){
