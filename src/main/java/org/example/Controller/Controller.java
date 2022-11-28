@@ -373,7 +373,7 @@ public class Controller {
         public void purchaseHistory() {
             System.out.println("\n Purchase history");
 
-            HashMap<String, Car> carHashMap = carRepository.showCar();
+            HashMap<String, Car> carHashMap = carRepository.showAvalibleCars()();
 
             for(Map.Entry<String, Car> car : carHashMap.entrySet()){
                 System.out.println(car.getKey() + " " + car.getValue());
