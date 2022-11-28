@@ -3,6 +3,7 @@
   "model" : "e-tron",
   "price" : 600.0,
   "rentersName" : "so",
+  "color" : "red",
   "rented" : false,
   "buyer" : "red",
   "decsription" : "Electric"

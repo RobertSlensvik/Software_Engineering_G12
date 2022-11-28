@@ -4,7 +4,7 @@ import org.example.Repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
-public class User_test {
+public class UserTest {
 
     UserRepository userRepository = new UserRepoJSON("userTest.json");
 

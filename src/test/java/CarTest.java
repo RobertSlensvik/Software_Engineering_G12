@@ -1,11 +1,10 @@
 import org.example.Model.Car;
 import org.example.Repository.CarRepoJSON;
 import org.example.Repository.CarRepository;
-import org.example.Repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
-public class Car_test {
+public class CarTest {
     CarRepository carRepository = new CarRepoJSON("carTest.json");
 
     Car newCar = new Car("Audi", "e-tron", "Electric", 

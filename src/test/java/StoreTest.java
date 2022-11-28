@@ -4,7 +4,7 @@ import org.example.Model.Store;
 import org.example.Repository.StoreRepoJSON;
 import org.example.Repository.StoreRepository;
 
-public class Store_test {
+public class StoreTest {
     StoreRepository storeRepository = new StoreRepoJSON("storeTest.json");
 
     Store newStore = new Store("Audi", "1999", "Big car", 900, "Robert", "Black", "Mohammed", 1000);
