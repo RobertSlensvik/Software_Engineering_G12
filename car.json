@@ -1,10 +1,9 @@
 [ {
   "brand" : "fiesta",
-  "model" : "1999",
-  "price" : 987.0,
+  "model" : "199",
+  "price" : 900.0,
   "rentersName" : "mo",
-  "color" : "black",
+  "color" : "red",
   "rented" : false,
-  "decsription" : "big boi",
-  "buyer" : "black"
+  "decsription" : "city car"
 } ]

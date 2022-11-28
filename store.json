@@ -1,6 +1,13 @@
 [ {
-  "name" : "ei",
-  "balance" : 0.0,
-  "activeRentals" : "ei",
-  "rentHistory" : "ei"
+  "brand" : "fiesta",
+  "model" : "199",
+  "price" : 900.0,
+  "rentersName" : "mo",
+  "color" : "red",
+  "rented" : false,
+  "name" : "ro",
+  "balance" : 9100.0,
+  "rentHistory" : "ro",
+  "activeRentals" : "ro",
+  "decsription" : "city car"
 } ]
