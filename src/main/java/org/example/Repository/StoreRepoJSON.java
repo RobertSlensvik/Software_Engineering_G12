@@ -73,5 +73,19 @@ public class StoreRepoJSON implements StoreRepository{
         storeMap.put(newCar.getName(), newCar);
         writeJSON(filename);
     }
+
+    @Override
+    public void addStore(Store store) {
+        storeMap.put(store.getName(), store);
+        writeJSON(filename);
+        
+    }
+
+    @Override
+    public void removeStore(String name) {
+        storeMap.remove(name);
+        writeJSON(filename);
+        
+    }
     
 }

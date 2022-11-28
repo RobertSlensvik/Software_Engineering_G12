@@ -10,4 +10,6 @@ public interface StoreRepository {
     ArrayList<String> showRentalUser();
     boolean storeExists(String userInput);
     void addCar(Store car);
+    void addStore(Store store);
+    void removeStore(String name);
 }

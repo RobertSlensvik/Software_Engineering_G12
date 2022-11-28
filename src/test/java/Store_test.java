@@ -9,7 +9,7 @@ public class Store_test {
 
     Store newStore = new Store("Audi", "1999", "Big car", 900, "Robert", "Black", "Mohammed", 1000);
 
-   /* @Test
+    @Test
     public void getStore_return_store_if_store_exists(){
         storeRepository.addStore(newStore);
         Assertions.assertNotNull(storeRepository.getStore(newStore.getName()));
@@ -18,8 +18,8 @@ public class Store_test {
     @Test
     public void getStore_return_null_if_store_does_not_exist(){
         storeRepository.removeStore(newStore.getName());
-        Assertions.assertTrue();
-    }*/
+        Assertions.assertNull(storeRepository.getStore("Robert"));
+    }
 
     
 }
